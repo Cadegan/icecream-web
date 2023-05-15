@@ -8,7 +8,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header bg-orange-50 h-[80vh] flex justify-end">
-        <img src={sunLogo} alt="" className=" h-28 animate-spin-slow"></img>
+        <img
+          src={sunLogo}
+          alt=""
+          className=" h-28 animate-spin-slow absolute right-[10%]"
+        ></img>
 
         {/* <svg
           className="top-story-wave01"
