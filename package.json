@@ -12,6 +12,7 @@
     "@types/react-dom": "^18.2.4",
     "framer-motion": "^10.12.10",
     "init": "^0.1.2",
+    "parallax-js": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
