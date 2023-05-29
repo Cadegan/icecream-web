@@ -7,11 +7,13 @@ import oishii from "./assets/おいしいいいいい.svg";
 
 import WaveUp from "./assets/WaveUp";
 import Seagull from "./assets/Seagull";
+import { MobileMenu } from "./components/Menu";
 
 function App() {
   return (
     <div className="App bg-orange-50">
       <header className="App-header h-[80vh] flex z-50">
+        <MobileMenu></MobileMenu>
         <img
           src={sunLogo}
           alt=""

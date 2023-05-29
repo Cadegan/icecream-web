@@ -1,0 +1,84 @@
+.mobileNavContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 99;
+
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: inherit;
+        z-index: 98;
+        width: 440px;
+        height: 440px;
+        overflow: hidden;
+    }
+
+    .buttonMenuToggle {
+        outline: none;
+        border: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        cursor: pointer;
+        position: absolute;
+        top: 18px;
+        left: 15px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: transparent;
+        z-index: 1000;
+    }
+
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        padding: 25px;
+        position: absolute;
+        top: 65px;
+        width: 230px;
+        height: fit-content;
+        z-index: 99;
+
+        li {
+            height: 40px;
+            list-style: none;
+            text-decoration: none;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 10px;
+            border: solid 0.1rem white;
+            color: white;
+            font-weight: 600;
+
+            .icon-placeholder {
+                flex: 25px 0;
+                margin-left: 20px;
+
+                img {
+                    filter: brightness(0) invert(1);
+                }
+            }
+
+            .text-placeholder {
+                flex: 1;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .mobileNavContainer {
+        display: none;
+    }
+}
