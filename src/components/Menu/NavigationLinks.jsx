@@ -1,5 +1,6 @@
 import * as React from "react";
 // import { HashLink } from "react-router-hash-link";
+// import { HashLink } from "react-router-hash-link";
 import { motion } from "framer-motion";
 import { MenuItem } from "./MenuItem";
 // import aboutIcon from "../../../assets/about_icon.svg";
@@ -47,9 +48,21 @@ const links = [
 ];
 
 export const NavigationLinks = ({ isVisible, handleClick }) => (
-  <motion.ul variants={variants}>
+  <motion.ul
+    variants={variants}
+    className=" p-6 absolute top-16 w-56 h-fit z-[99]"
+  >
     {links.map(({ id, label, path, icon }) => (
-      <></>
+      <MenuItem
+        id={id}
+        icon={icon}
+        text={label}
+        isVisible={isVisible}
+        onClick={(event) => {
+          // console.log("MenuItem clicked");
+          handleClick(event);
+        }}
+      />
     ))}
   </motion.ul>
 );

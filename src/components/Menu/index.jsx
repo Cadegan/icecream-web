@@ -76,11 +76,14 @@ export const MobileMenu = () => {
       initial={false}
       animate={isVisible ? "open" : "closed"}
       ref={containerRef}
-      className="mobileNavContainer"
+      className="fixed top-0 left-0 bottom-0 z-[99]"
     >
       <MenuToggle toggle={toggleOpen} />
       <NavigationLinks isVisible={isVisible} handleClick={handleClick} />
-      <motion.div className="background" variants={sidebar} />
+      <motion.div
+        className="absolute top-0 left-0 bottom-0 z-[98] w-96 h-96 overflow-hidden"
+        variants={sidebar}
+      />
     </motion.nav>
   );
 };
