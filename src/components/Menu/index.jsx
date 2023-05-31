@@ -4,6 +4,7 @@ import { motion, useCycle } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { NavigationLinks } from "./NavigationLinks";
 import { useCallback } from "react";
+import sunLogo from "../../icons/sun.svg";
 // import "./styles.css";
 
 const sidebar = {
@@ -72,18 +73,25 @@ export const MobileMenu = () => {
   }, [isVisible, escapeKeyListener, outsideClickListener]);
 
   return (
-    <motion.nav
-      initial={false}
-      animate={isVisible ? "open" : "closed"}
-      ref={containerRef}
-      className="fixed top-0 left-0 bottom-0 z-[99]"
-    >
-      <MenuToggle toggle={toggleOpen} />
-      <NavigationLinks isVisible={isVisible} handleClick={handleClick} />
-      <motion.div
-        className="absolute top-0 left-0 bottom-0 z-[98] w-[28rem] h-[28rem] overflow-hidden"
-        variants={sidebar}
-      />
-    </motion.nav>
+    <div>
+      <img
+        src={sunLogo}
+        alt=""
+        className="h-28 animate-spin-slow absolute right-[3vw] top-[3vh]"
+      ></img>
+      <motion.nav
+        initial={false}
+        animate={isVisible ? "open" : "closed"}
+        ref={containerRef}
+        className="fixed top-0 left-0 bottom-0 z-[99]"
+      >
+        <MenuToggle toggle={toggleOpen} />
+        <NavigationLinks isVisible={isVisible} handleClick={handleClick} />
+        <motion.div
+          className="absolute top-0 left-0 bottom-0 z-[98] w-[28rem] h-[28rem] overflow-hidden"
+          variants={sidebar}
+        />
+      </motion.nav>
+    </div>
   );
 };

@@ -14,11 +14,11 @@ function App() {
     <div className="App bg-orange-50">
       <header className="App-header h-[80vh] flex z-50">
         <MobileMenu></MobileMenu>
-        <img
+        {/* <img
           src={sunLogo}
           alt=""
           className="h-28 animate-spin-slow absolute right-[3vw] top-[3vh]"
-        ></img>
+        ></img> */}
         <Seagull className="w-16 absolute left-[68vw] top-[29vh] animate-wiggleSlow drop-shadow-md"></Seagull>
         <Seagull className="w-24 absolute left-[65vw] top-[25vh] animate-wiggle drop-shadow-md"></Seagull>
 
