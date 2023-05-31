@@ -81,7 +81,7 @@ export const MobileMenu = () => {
       <MenuToggle toggle={toggleOpen} />
       <NavigationLinks isVisible={isVisible} handleClick={handleClick} />
       <motion.div
-        className="absolute top-0 left-0 bottom-0 z-[98] w-96 h-96 overflow-hidden"
+        className="absolute top-0 left-0 bottom-0 z-[98] w-[28rem] h-[28rem] overflow-hidden"
         variants={sidebar}
       />
     </motion.nav>
