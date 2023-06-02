@@ -50,7 +50,7 @@ const links = [
 export const NavigationLinks = ({ isVisible, handleClick }) => (
   <motion.ul
     variants={variants}
-    className=" p-6 absolute top-16 -left-36 w-56 h-fit z-[99]"
+    className=" p-6 absolute top-24 -left-36 w-56 h-fit z-[99]"
   >
     {links.map(({ id, label, path, icon }) => (
       <MenuItem

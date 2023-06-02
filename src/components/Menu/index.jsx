@@ -51,14 +51,18 @@ export const MobileMenu = () => {
   }, [isVisible, escapeKeyListener, outsideClickListener]);
 
   return (
-    <div className="fixed right-[3vw] top-[3vh] z-[999]">
-      <img src={sunLogo} alt="" className="h-28 animate-spin-slow"></img>
+    <div className="fixed right-[3vw] top-[3vh] z-[999] h-24 w-24">
       <motion.nav
         initial={false}
         animate={isVisible ? "open" : "closed"}
         ref={containerRef}
         className="absolute z-[99] top-4 left-4"
       >
+        <img
+          src={sunLogo}
+          alt=""
+          className="h-28 animate-spin-slow relative z-[99]"
+        ></img>
         <MenuToggle toggle={toggleOpen} />
         <NavigationLinks isVisible={isVisible} handleClick={handleClick} />
         <BackgroundMenu />
