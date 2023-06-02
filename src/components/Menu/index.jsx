@@ -1,9 +1,8 @@
 import * as React from "react";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useCallback } from "react";
 import { motion, useCycle } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { NavigationLinks } from "./MenuLinks";
-import { useCallback } from "react";
 import sunLogo from "../../icons/sun.svg";
 import { BackgroundMenu } from "./MenuBackground";
 
@@ -11,16 +10,10 @@ export const MobileMenu = () => {
   const [isVisible, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
 
-  const handleClick = useCallback(() => {
-    toggleOpen();
-  }, [toggleOpen]);
+  const handleClick = useCallback(toggleOpen, [toggleOpen]);
 
   const escapeKeyListener = useCallback(
-    (event) => {
-      if (event.key === "Escape") {
-        toggleOpen(false);
-      }
-    },
+    (event) => event.key === "Escape" && toggleOpen(false),
     [toggleOpen]
   );
 
@@ -37,13 +30,12 @@ export const MobileMenu = () => {
   );
 
   useEffect(() => {
-    if (isVisible) {
-      document.addEventListener("mousedown", outsideClickListener);
-      document.addEventListener("keydown", escapeKeyListener);
-    } else {
-      document.removeEventListener("mousedown", outsideClickListener);
-      document.removeEventListener("keydown", escapeKeyListener);
-    }
+    const handleVisibility = isVisible
+      ? "addEventListener"
+      : "removeEventListener";
+    document[handleVisibility]("mousedown", outsideClickListener);
+    document[handleVisibility]("keydown", escapeKeyListener);
+
     return () => {
       document.removeEventListener("mousedown", outsideClickListener);
       document.removeEventListener("keydown", escapeKeyListener);
