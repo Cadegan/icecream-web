@@ -1,10 +1,10 @@
 import * as React from "react";
 import { useRef, useEffect, useCallback } from "react";
-import { motion, useCycle } from "framer-motion";
+import { motion, useCycle, useMotionValue, useTransform } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { NavigationLinks } from "./MenuLinks";
-import sunLogo from "../../icons/sun.svg";
 import { BackgroundMenu } from "./MenuBackground";
+import { SunLogo } from "../../icons/SunLogo";
 
 export const MobileMenu = () => {
   const [isVisible, toggleOpen] = useCycle(false, true);
@@ -29,6 +29,13 @@ export const MobileMenu = () => {
     [containerRef, toggleOpen]
   );
 
+  const color = useMotionValue(isVisible ? 0 : 1);
+  const filter = useTransform(
+    color,
+    [0, 1],
+    ["hue-rotate(0deg)", "hue-rotate(180deg)"]
+  );
+
   useEffect(() => {
     const handleVisibility = isVisible
       ? "addEventListener"
@@ -50,11 +57,11 @@ export const MobileMenu = () => {
         ref={containerRef}
         className="absolute z-[99] top-4 left-4"
       >
-        <img
-          src={sunLogo}
-          alt=""
-          className="h-28 animate-spin-slow relative z-[99]"
-        ></img>
+        <SunLogo
+          color={isVisible ? "rgb(255, 166, 0)" : "rgb(67, 89, 125)"}
+          strokeWidth={isVisible ? "12" : "6"}
+          className="h-24 w-24 relative z-[99] right-[0.6rem] top-[0.4rem]"
+        ></SunLogo>
         <MenuToggle toggle={toggleOpen} />
         <NavigationLinks isVisible={isVisible} handleClick={handleClick} />
         <BackgroundMenu />

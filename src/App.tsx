@@ -1,13 +1,13 @@
 import React from "react";
 
 import "./App.css";
-import sunLogo from "./icons/sun.svg";
+// import sunLogo from "./icons/sun.svg";
 import handIcecream from "./assets/hand-icecream.png";
 import oishii from "./assets/おいしいいいいい.svg";
 
 import WaveUp from "./assets/WaveUp";
 import Seagull from "./assets/Seagull";
-import { MobileMenu } from "./components/Menu";
+import { MobileMenu } from "./components/Menu/index";
 
 function App() {
   return (
