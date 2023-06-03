@@ -1,6 +1,8 @@
-import React from "react";
+interface WaveUpProps {
+  className: string;
+}
 
-const WaveUp = ({ className }) => (
+const WaveUp = ({ className }: WaveUpProps) => (
   <svg
     className={className}
     version="1.1"
@@ -10,7 +12,7 @@ const WaveUp = ({ className }) => (
     x="0px"
     y="0px"
     viewBox="0 0 2571 417.4"
-    style={{ enableBackground: "new 0 0 2571 417.4" }}
+    enableBackground="new 0 0 2571 417.4"
     xmlSpace="preserve"
   >
     <style type="text/css">{`.st0{fill:#77DFF2;}`}</style>

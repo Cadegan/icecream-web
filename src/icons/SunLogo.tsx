@@ -1,4 +1,10 @@
-export const SunLogo = ({ color, className, strokeWidth }) => (
+interface SunLogoProps {
+  color: string;
+  className?: string;
+  strokeWidth?: string | number;
+}
+
+export const SunLogo = ({ color, className, strokeWidth }: SunLogoProps) => (
   <svg
     className={`animate-spin-slow ${className}`}
     version="1.1"
