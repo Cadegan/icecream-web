@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useRef, useEffect, useCallback } from "react";
-import { motion, useCycle, useMotionValue, useTransform } from "framer-motion";
+import { motion, useCycle } from "framer-motion";
 import { MenuToggle } from "./MenuToggle";
 import { NavigationLinks } from "./MenuLinks";
 import { BackgroundMenu } from "./MenuBackground";
@@ -8,32 +8,35 @@ import { SunLogo } from "../../icons/SunLogo";
 
 export const MobileMenu = () => {
   const [isVisible, toggleOpen] = useCycle(false, true);
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const handleClick = useCallback(toggleOpen, [toggleOpen]);
+  const handleClick = useCallback(
+    (event: React.MouseEvent<Element, MouseEvent>) => {
+      toggleOpen();
+    },
+    [toggleOpen]
+  );
 
   const escapeKeyListener = useCallback(
-    (event) => event.key === "Escape" && toggleOpen(false),
+    (event: KeyboardEvent | Event) => {
+      if ((event as KeyboardEvent).key === "Escape") {
+        toggleOpen(0);
+      }
+    },
     [toggleOpen]
   );
 
   const outsideClickListener = useCallback(
-    (event) => {
+    (event: MouseEvent | Event) => {
       if (
         containerRef.current &&
+        event.target instanceof Node &&
         !containerRef.current.contains(event.target)
       ) {
         toggleOpen();
       }
     },
     [containerRef, toggleOpen]
-  );
-
-  const color = useMotionValue(isVisible ? 0 : 1);
-  const filter = useTransform(
-    color,
-    [0, 1],
-    ["hue-rotate(0deg)", "hue-rotate(180deg)"]
   );
 
   useEffect(() => {

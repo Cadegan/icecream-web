@@ -7,7 +7,7 @@ import oishii from "./assets/おいしいいいいい.svg";
 
 import WaveUp from "./assets/WaveUp";
 import Seagull from "./assets/Seagull";
-import { MobileMenu } from "./components/Menu/index";
+import { MobileMenu } from "./components/Menu/MobileMenu";
 
 function App() {
   return (

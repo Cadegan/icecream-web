@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const Path = ({
   strokeWidth = 3,
   strokeColor = "#FFFFFF",
-  strokeLinecap = "round",
+  strokeLinecap = "round" as const,
   ...rest
 }) => (
   <motion.path
@@ -15,7 +15,11 @@ const Path = ({
   />
 );
 
-export const MenuToggle = ({ toggle }) => (
+interface MenuToggleProps {
+  toggle: () => void;
+}
+
+export const MenuToggle = ({ toggle }: MenuToggleProps) => (
   <button
     onClick={toggle}
     className=" flex justify-center items-center outline-none border-none cursor-pointer absolute top-[2.1rem] left-4 w-12 h-12 bg-transparent z-[1000] rounded-full"

@@ -1,12 +1,6 @@
 import * as React from "react";
-// import { HashLink } from "react-router-hash-link";
-// import { HashLink } from "react-router-hash-link";
 import { motion } from "framer-motion";
 import { MenuItem } from "./MenuItem";
-// import aboutIcon from "../../../assets/about_icon.svg";
-// import skillsIcon from "../../../assets/skills_icon.svg";
-// import projectsIcon from "../../../assets/projects_icon.svg";
-// import homeIcon from "../../../assets/home_icon.svg";
 
 const variants = {
   open: {
@@ -25,34 +19,42 @@ const links = [
     id: 0,
     label: "Home",
     path: "#",
-    // icon: homeIcon,
+    icon: "",
   },
   {
     id: 1,
     label: "About me",
     path: "#about",
-    // icon: aboutIcon,
+    icon: "",
   },
   {
     id: 2,
     label: "Skills",
     path: "#skills",
-    // icon: skillsIcon,
+    icon: "",
   },
   {
     id: 3,
     label: "My projects",
     path: "#projects",
-    // icon: projectsIcon,
+    icon: "",
   },
 ];
 
-export const NavigationLinks = ({ isVisible, handleClick }) => (
+interface NavigationLinksProps {
+  isVisible: boolean;
+  handleClick: (event: React.MouseEvent<Element, MouseEvent>) => void;
+}
+
+export const NavigationLinks = ({
+  isVisible,
+  handleClick,
+}: NavigationLinksProps) => (
   <motion.ul
     variants={variants}
     className=" p-6 absolute top-24 -left-36 w-56 h-fit z-[99]"
   >
-    {links.map(({ id, label, path, icon }) => (
+    {links.map(({ id, label, icon }) => (
       <MenuItem
         id={id}
         icon={icon}

@@ -18,7 +18,21 @@ const variants = {
   },
 };
 
-export const MenuItem = ({ id, icon, text, isVisible, onClick }) => {
+interface MenuItemProps {
+  id: number;
+  icon: string;
+  text: string;
+  isVisible: boolean;
+  onClick: (event: React.MouseEvent) => void;
+}
+
+export const MenuItem = ({
+  id,
+  icon,
+  text,
+  isVisible,
+  onClick,
+}: MenuItemProps) => {
   return (
     <AnimatePresence>
       {isVisible && (
