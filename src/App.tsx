@@ -3,6 +3,7 @@ import React from "react";
 import "./App.css";
 import handIcecream from "./assets/hand-icecream.png";
 import oishii from "./assets/おいしいいいいい.svg";
+import clouds from "./assets/clouds.svg";
 
 import WaveUp from "./assets/WaveUp";
 import Seagull from "./assets/Seagull";
@@ -15,7 +16,11 @@ function App() {
         <MobileMenu></MobileMenu>
         <Seagull className="w-16 absolute left-[68vw] top-[29vh] animate-wiggleSlow drop-shadow-md"></Seagull>
         <Seagull className="w-24 absolute left-[65vw] top-[25vh] animate-wiggle drop-shadow-md"></Seagull>
-
+        <img
+          src={clouds}
+          alt="Clouds"
+          className="absolute h-24 md:h-44 lg:h-48 top-[25vh] left-[10vw] md:top-[20vh]  md:left-[20%] lg:left-[75%] drop-shadow-[0px_3px_0px_rgba(255,255,255,0.99)] "
+        ></img>
         <img
           src={oishii}
           alt="Oishii"
@@ -32,7 +37,15 @@ function App() {
       <section className="hero bg-[#77dff2] h-96">
         <WaveUp className="w-full absolute block bottom-[20vh] z-10"></WaveUp>
 
-        <div>Titre</div>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. <br></br>{" "}
+            Autem neque aperiam nemo inventore repudiandae nulla officia nisi
+            cupiditate perferendis consectetur eligendi nihil ab a
+            necessitatibus, doloremque qui voluptatum dolores asperiores dolor
+            quibusdam odit. Cumque officiis maiores veniam commodi eos labore.
+          </p>
+        </div>
       </section>
     </div>
   );
