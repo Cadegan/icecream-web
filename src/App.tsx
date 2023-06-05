@@ -37,9 +37,10 @@ function App() {
       <section className="hero bg-[#77dff2] h-96">
         <WaveUp className="w-full absolute block bottom-[20vh] z-10"></WaveUp>
 
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. <br></br>{" "}
+        <div className=" max-w-screen-lg m-auto">
+          <p className="font-chalkboard">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. <br></br>
+            <br></br>
             Autem neque aperiam nemo inventore repudiandae nulla officia nisi
             cupiditate perferendis consectetur eligendi nihil ab a
             necessitatibus, doloremque qui voluptatum dolores asperiores dolor

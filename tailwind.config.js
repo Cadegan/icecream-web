@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        chalkboard: ["Chalkboard SE", "sans-serif"],
+      },
       keyframes: {
         wiggle: {
           "0%, 100%": { transform: "rotate(-1deg) translateY(-25%)" },
