@@ -23,20 +23,20 @@ const links = [
   },
   {
     id: 1,
-    label: "About me",
-    path: "#about",
+    label: "Section 1",
+    path: "#section1",
     icon: "",
   },
   {
     id: 2,
-    label: "Skills",
-    path: "#skills",
+    label: "Section 2",
+    path: "#section2",
     icon: "",
   },
   {
     id: 3,
-    label: "My projects",
-    path: "#projects",
+    label: "Section 3",
+    path: "#section3",
     icon: "",
   },
 ];

@@ -19,7 +19,7 @@ function App() {
         <img
           src={clouds}
           alt="Clouds"
-          className="absolute h-24 md:h-44 lg:h-48 top-[25vh] left-[10vw] md:top-[20vh]  md:left-[20%] lg:left-[75%] drop-shadow-[0px_3px_0px_rgba(255,255,255,0.99)] "
+          className="absolute h-24 md:h-44 lg:h-48 top-[25vh] left-[10vw] md:top-[20vh]  md:left-[20%] lg:left-[75%]"
         ></img>
         <img
           src={oishii}

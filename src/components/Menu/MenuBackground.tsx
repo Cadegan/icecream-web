@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const sidebar = {
   closed: {
-    backgroundColor: "#FFA600",
+    backgroundColor: "#fcd34d",
     borderRadius: "44% 56% 56% 44% / 56% 58% 42% 44%",
     // top: "-44px",
     height: "65px",
