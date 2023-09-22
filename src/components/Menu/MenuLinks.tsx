@@ -56,6 +56,7 @@ export const NavigationLinks = ({
   >
     {links.map(({ id, label, icon }) => (
       <MenuItem
+        key={id}
         id={id}
         icon={icon}
         text={label}
